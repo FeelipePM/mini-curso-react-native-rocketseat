@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, Platform, TouchableOpacity, } from 'react-native';
 import Repo from './components/Repo';
+import NewRepoModal from './components/NewRepoModal';
 
 
 export default class App extends Component {
@@ -44,6 +45,7 @@ export default class App extends Component {
           { this.state.repos.map(repo => <Repo key={repo.id} data={repo} />) }
         </ScrollView> 
 
+        <NewRepoModal />
       </View>
     );
   }
