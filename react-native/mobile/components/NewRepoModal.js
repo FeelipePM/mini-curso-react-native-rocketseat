@@ -20,20 +20,18 @@ export default class NewRepoModal extends Component {
               autoFocus
               autoCapitalize="none"
               style={styles.boxInput}
-              underlineColorAndroid="rgba(0, 0, 0, 0)"
+              underlineColorAndroid="rgba(0,0,0,0)"
               placeholder="organização/repositório"
-              />
+            />
 
               <View style={styles.buttonContainer}>
                 <TouchableOpacity 
                   style={[styles.button, styles.cancelButton]}
-                  onPress={() => {}}
+                  onPress={() => {}} 
                   >
                   <Text style={styles.buttonText}>Cancelar</Text>
                 </TouchableOpacity>
-              </View>
-
-              <View style={styles.buttonContainer}>
+            
                 <TouchableOpacity 
                   style={[styles.button, styles.submitButton]}
                   onPress={() => {}}
