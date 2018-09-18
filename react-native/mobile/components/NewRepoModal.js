@@ -31,7 +31,7 @@ export default class NewRepoModal extends Component {
                   >
                   <Text style={styles.buttonText}>Cancelar</Text>
                 </TouchableOpacity>
-            
+          
                 <TouchableOpacity 
                   style={[styles.button, styles.submitButton]}
                   onPress={() => {}}
