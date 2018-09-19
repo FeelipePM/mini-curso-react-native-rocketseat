@@ -15,6 +15,7 @@ import NewRepoModal from './components/NewRepoModal';
 export default class App extends Component {
 
   state = {
+    modalVisible: false,
     repos: [
       {
       id: 1,
@@ -28,6 +29,12 @@ export default class App extends Component {
         title: 'Github Marco Bruno',
         author: 'MarcoBrunoBR',
         },
+      {
+        id: 3,
+        thumbnail: 'https://avatars0.githubusercontent.com/u/28929274?s=200&v=4',
+        title: 'RocketSeat',
+        author: 'Diego3G',
+        },  
     ],
   };
 
@@ -36,7 +43,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerText}>Minicurso Gonative</Text>
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => this.setState({ modalVisible: true })}>
             <Text style={styles.headerButton}>+</Text>
           </TouchableOpacity>
         </View>
@@ -45,7 +52,7 @@ export default class App extends Component {
           { this.state.repos.map(repo => <Repo key={repo.id} data={repo} />) }
         </ScrollView> 
 
-        <NewRepoModal />
+        <NewRepoModal onCancel={() => this.setState({ modalVisible: false })} visible={this.state.modalVisible} />
       </View>
     );
   }
