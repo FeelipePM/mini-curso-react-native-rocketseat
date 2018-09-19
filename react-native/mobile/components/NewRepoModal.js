@@ -12,7 +12,7 @@ TouchableOpacity,
 export default class NewRepoModal extends Component {
   render() {
     return (
-      <Modal animationType="fade" transparent={true} visible={true}>
+      <Modal animationType="fade" transparent={true} visible={this.props.visible}>
         <View style={styles.modalContainer}>
           <View style={styles.boxContainer}>
             <Text style={styles.boxTitle}>Adicionar Repositório</Text>
@@ -23,11 +23,10 @@ export default class NewRepoModal extends Component {
               underlineColorAndroid="rgba(0,0,0,0)"
               placeholder="organização/repositório"
             />
-
               <View style={styles.buttonContainer}>
                 <TouchableOpacity 
                   style={[styles.button, styles.cancelButton]}
-                  onPress={() => {}} 
+                  onPress={this.props.onCancel}
                   >
                   <Text style={styles.buttonText}>Cancelar</Text>
                 </TouchableOpacity>
